@@ -1,5 +1,5 @@
-import express from 'express'
 import util from 'util'
+import express from 'express'
 
 const debug = util.debuglog('myApp')
 
