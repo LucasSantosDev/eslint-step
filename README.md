@@ -38,3 +38,10 @@ yarn add prettier
 npx tsc --init
 ```
 
+### Examples
+
+![validation error](error.png)
+
+<br />
+
+![validation success](success.png)
