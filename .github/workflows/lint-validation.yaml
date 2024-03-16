@@ -1,0 +1,29 @@
+name: Validate Lint Pull Request
+
+on:
+  pull_request:
+    branches: ["*"]
+    types: [opened, edited, reopened]
+
+  workflow_dispatch:
+
+jobs:
+  validate_lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: yarn
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Validate Lint
+        run: yarn lint
